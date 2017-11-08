@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Neosoft_Studio::studio" title="Design Studio" module="Neosoft_Studio" sortOrder="40"
+             resource="Magestore_Faq::studio"/>
+        <add id="Neosoft_Studio::config_faq" title="Settings" module="Neosoft_Studio" sortOrder="4"
+             parent="Neosoft_Studio::studio" action="adminhtml/system_config/edit/section/studio"
+             resource="Neosoft_Studio::config_studio"/>
+    </menu>
+</config>

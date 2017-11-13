@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+	<Officebox_Productimport>
+	  <version>0.1.0</version>
+	</Officebox_Productimport>
+  </modules>
+  
+<global>
+	<helpers>
+	  <productimport>
+		<class>Officebox_Productimport_Helper</class>
+	  </productimport>
+	</helpers>
+	<blocks>
+	  <productimport>
+		<class>Officebox_Productimport_Block</class>
+	  </productimport>
+	</blocks>
+</global>
+  
+<admin>
+	<routers>
+	  <productimport>
+		<use>admin</use>
+		<args>
+		  <module>Officebox_Productimport</module>
+		  <frontName>admin_productimport</frontName>
+		</args>
+	  </productimport>
+	</routers>
+</admin>
+<!-- <default>
+    <tab1>
+        <general>
+            <text_field>Default value</text_field>
+        </general>
+    </tab1>
+</default> -->
+
+  <adminhtml>
+	<menu>
+	  <productimport module="productimport">
+		<title>OfficeBoxSupply</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <productimportbackend module="productimport">
+			<title>Backend Page Title</title>
+			<sort_order>0</sort_order>
+			<action>admin_productimport/adminhtml_productimportbackend</action>
+		  </productimportbackend>
+		</children>
+	  </productimport>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <tab1>
+                                        <title>Configuration</title> <!-- Used in resources tree -->
+                                    </tab1>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<productimport>
+		  <file>productimport.xml</file>
+		</productimport>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 

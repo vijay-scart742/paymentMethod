@@ -2,23 +2,20 @@
 <config>
   <modules>
 	<Officebox_Productimport>
-	  <version>0.1.0</version>
+	  <version>0.1.3</version>
 	</Officebox_Productimport>
   </modules>
-  
-<global>
-	<helpers>
-	  <productimport>
-		<class>Officebox_Productimport_Helper</class>
-	  </productimport>
-	</helpers>
-	<blocks>
-	  <productimport>
-		<class>Officebox_Productimport_Block</class>
-	  </productimport>
-	</blocks>
-</global>
-  
+<frontend>
+	<routers>
+		<productimport>
+	        <use>standard</use>
+	        <args>
+	            <module>Officebox_Productimport</module>
+	            <frontName>productimport</frontName>
+	        </args>
+	    </productimport>
+	</routers>
+</frontend>
 <admin>
 	<routers>
 	  <productimport>
@@ -30,6 +27,41 @@
 	  </productimport>
 	</routers>
 </admin>
+<global>
+	<helpers>
+	  <productimport>
+		<class>Officebox_Productimport_Helper</class>
+	  </productimport>
+	</helpers>
+	<blocks>
+	  <productimport>
+		<class>Officebox_Productimport_Block</class>
+	  </productimport>
+	</blocks>
+	<resources>
+        <officebox_productimport>
+            <setup>
+                <module>Officebox_Productimport</module>
+                <class>Mage_Catalog_Model_Resource_Setup</class>
+            </setup>
+            <connection>
+                <use>core_setup</use>
+            </connection>
+        </officebox_productimport>
+        <officebox_productimport_write>
+            <connection>
+                <use>core_write</use>
+            </connection>
+        </officebox_productimport_write>
+        <officebox_productimport_read>
+            <connection>
+                <use>core_read</use>
+            </connection>
+        </officebox_productimport_read>
+    </resources>
+</global>
+
+
 <!-- <default>
     <tab1>
         <general>

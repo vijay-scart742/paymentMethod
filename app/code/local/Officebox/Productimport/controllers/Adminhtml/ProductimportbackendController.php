@@ -1,4 +1,5 @@
 <?php
+
 class Officebox_Productimport_Adminhtml_ProductimportbackendController extends Mage_Adminhtml_Controller_Action
 {
 
